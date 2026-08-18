@@ -28,6 +28,19 @@ Ask Claude Code or Cursor to claurify a prompt, pick a Claude model, or set effo
 - a one-line why
 - a `claude --model … --effort …` run line
 
+## Benchmark
+
+Three tasks (invoice ledger, policy merge, pagination copy), five models (Fable 5, Opus 5, Sonnet 5, Opus 4.8, Opus 4.6), effort `high`, one run per cell. August 2026.
+
+| | Pass | Over-scope | Cost | Time |
+|---|---|---|---|---|
+| Original | 10/15 | 13 | $11.76 | 35 min |
+| Structured | 15/15 | 0 | $5.02 | 12 min |
+
+Policy merge: original 0/5, structured 5/5. The skill's recommended model and effort on the same three tasks cost $0.90 and passed 3/3. Original at Opus 5 high cost $2.21 and passed 2/3.
+
+Structured prompts were written by this skill and then frozen. Runs used `--disable-slash-commands` and no MCP, so this is the prompt, not the skill sitting in the loop.
+
 ## Layout
 
 ```
